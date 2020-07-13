@@ -34,6 +34,7 @@ struct ImagesGroup: View {
                 }
             )
             
+            if #available(iOS 14.0, *) {
             SectionView(
                 title: "Label",
                 description: "A standard label for user interface items, consisting of an icon with a title.",
@@ -45,6 +46,7 @@ struct ImagesGroup: View {
                     }
                 }
             )
+            }
         }
     }
 }

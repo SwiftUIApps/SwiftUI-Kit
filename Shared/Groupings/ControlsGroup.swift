@@ -88,8 +88,10 @@ struct ControlsGroup: View {
             #endif
             
             #if os(iOS) || os(OSX)
+            if #available(iOS 14.0, *) {
             SectionView(title: "ColorPicker", description: "A control used to select a color from the system color picker UI.") {
                 ColorPicker("Color", selection: $color)
+            }
             }
             #endif
         }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 struct IndicatorsGroup: View {
     @State private var progress = 0.5
 
@@ -40,6 +41,7 @@ struct IndicatorsGroup: View {
     }
 }
 
+@available(iOS 14.0, *)
 struct IndicatorsGroup_Previews: PreviewProvider {
     static var previews: some View {
         IndicatorsGroup()

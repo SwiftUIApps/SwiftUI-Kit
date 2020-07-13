@@ -11,12 +11,9 @@ struct GroupView<Content: View>: View {
     var title: String
     let content: () -> Content
     
-    var body: some View {
+    @ViewBuilder var body: some View {
         #if os(iOS)
-        return List {
-            content()
-        }
-        .listStyle(InsetGroupedListStyle())
+       listView
         .navigationBarTitle(title, displayMode: .inline)
         #else
         return ScrollView {
@@ -24,6 +21,39 @@ struct GroupView<Content: View>: View {
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         #endif
     }
+    
+//    func listStyle<T: ListStyle>() -> T {
+//        if #available(iOS 14.0, *) {
+//            return InsetGroupedListStyle() as! T
+//        } else {
+//            return GroupedListStyle() as! T
+//        }
+//    }
+    
+    #if os(iOS)
+    @ViewBuilder var listView: some View {
+        if #available(iOS 14.0, *) {
+            insetGroupList_14
+        } else {
+            groupedList
+        }
+    }
+    
+    @available(iOS 14.0, *)
+    var insetGroupList_14: some View {
+        List {
+            content()
+        }
+        .listStyle(InsetGroupedListStyle())
+    }
+    
+    var groupedList: some View {
+        List {
+            content()
+        }
+        .listStyle(GroupedListStyle())
+    }
+    #endif
 }
 
 struct GroupView_Previews: PreviewProvider {

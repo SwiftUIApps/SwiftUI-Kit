@@ -21,14 +21,18 @@ struct FontsGroup: View {
                         .font(.title)
                 }
                 
-                SectionView(description: "Create a font for second level hierarchical headings.") {
-                    Text("title2")
-                        .font(.title2)
+                if #available(iOS 14.0, *) {
+                    SectionView(description: "Create a font for second level hierarchical headings.") {
+                        Text("title2")
+                            .font(.title2)
+                    }
                 }
                 
-                SectionView(description: "Create a font for third level hierarchical headings.") {
-                    Text("title3")
-                        .font(.title3)
+                if #available(iOS 14.0, *) {
+                    SectionView(description: "Create a font for third level hierarchical headings.") {
+                        Text("title3")
+                            .font(.title3)
+                    }
                 }
             }
             
@@ -60,9 +64,11 @@ struct FontsGroup: View {
                         .font(.caption)
                 }
                 
-                SectionView(description: "Create a font with the alternate caption text style.") {
-                    Text("caption2")
-                        .font(.caption2)
+                if #available(iOS 14.0, *) {
+                    SectionView(description: "Create a font with the alternate caption text style.") {
+                        Text("caption2")
+                            .font(.caption2)
+                    }
                 }
             }
             

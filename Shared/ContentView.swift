@@ -19,7 +19,9 @@ struct ContentView: View {
             Grouping(title: "Haptics", icon: "hand.tap", content: { HapticsGroup() })
             #endif
             Grouping(title: "Images", icon: "photo", content: { ImagesGroup() })
+            if #available(iOS 14.0, *) {
             Grouping(title: "Indicators", icon: "speedometer", content: { IndicatorsGroup() })
+            }
             Grouping(title: "Shapes", icon: "square.on.circle", content: { ShapesGroup() })
             Grouping(title: "Text", icon: "text.aligncenter", content: { TextGroup() })
         }
@@ -47,7 +49,16 @@ struct Grouping<Content: View>: View {
     var body: some View {
         NavigationLink(destination: GroupView(title: title, content: content)) {
             #if os(iOS)
-            Label(title, systemImage: icon).font(.headline).padding(.vertical, 8)
+            if #available(iOS 14.0, *) {
+                Label(title, systemImage: icon).font(.headline).padding(.vertical, 8)
+            } else {
+                HStack {
+                    Image(systemName: icon).imageScale(.large)
+                        .frame(minWidth: 0, idealWidth: 44, maxWidth: .infinity, minHeight: 0, idealHeight: 44, maxHeight: .infinity, alignment: .center)
+                    Text(title)
+                    Spacer()
+                }
+            }
             #else
             Label(title, systemImage: icon)
             #endif

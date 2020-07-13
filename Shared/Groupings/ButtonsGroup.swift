@@ -65,6 +65,7 @@ struct ButtonsGroup: View {
             )
             
             #if !os(watchOS) && !os(tvOS)
+            if #available(iOS 14.0, *) {
             SectionView(
                 title: "Link",
                 description: "A control for navigating to a URL.",
@@ -72,6 +73,7 @@ struct ButtonsGroup: View {
                     Link("lil.software", destination: URL(string: "https://lil.software")!)
                 }
             )
+            }
             #endif
             
             #if !os(watchOS)
@@ -134,6 +136,7 @@ struct ButtonsGroup: View {
             )
             
             #if os(iOS) || os(OSX)
+            if #available(iOS 14.0, *) {
             SectionView(
                 title: "SignInWithAppleButton",
                 description: "A control that you add to your interface to allow users to sign in with their Apple ID.",
@@ -149,6 +152,7 @@ struct ButtonsGroup: View {
                     )
                 }
             )
+            }
             #endif
         }
     }
