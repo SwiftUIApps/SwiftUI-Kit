@@ -16,7 +16,7 @@ struct GroupView<Content: View>: View {
        listView
         .navigationBarTitle(title, displayMode: .inline)
         #else
-        return ScrollView {
+        ScrollView {
             content().padding()
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         #endif

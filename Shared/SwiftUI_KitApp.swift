@@ -4,38 +4,33 @@
 //
 //  Created by Jordan Singer on 7/10/20.
 //
+
 import UIKit
 import SwiftUI
 
 #if os(iOS)
 
-@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let contentView = ContentView()
-//        let newWindow = UIWindow(frame: UIScreen.main.bounds)
-//        newWindow.rootViewController = UIHostingController(rootView: contentView)
-//        self.window = newWindow
-//        self.window?.makeKeyAndVisible()
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
-//    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-//        // Called when a new scene session is being created.
-//        // Use this method to select a configuration to create the new scene with.
-//        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-//    }
-//
-//    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-//        // Called when the user discards a scene session.
-//        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-//        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-//    }
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
 
 
 }
@@ -90,6 +85,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+}
+
+@main
+struct MainApp {
+    static func main() {
+        if #available(iOS 14.0, *) {
+            SwiftUI_Kit_iOS_App.main()
+        } else {
+            UIApplicationMain(
+                CommandLine.argc,
+                CommandLine.unsafeArgv,
+                nil,
+                NSStringFromClass(AppDelegate.self)
+            )
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+struct SwiftUI_Kit_iOS_App: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
     }
 }
 
