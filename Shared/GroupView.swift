@@ -14,7 +14,7 @@ struct GroupView<Content: View>: View {
     @ViewBuilder var body: some View {
         #if os(iOS)
        listView
-        .navigationBarTitle(title, displayMode: .inline)
+//        .navigationBarTitle(title, displayMode: .inline)
         #else
         ScrollView {
             content().padding()

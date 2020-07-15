@@ -30,7 +30,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             #if os(iOS) || os(watchOS) || os(tvOS)
-            list.navigationBarTitle("SwiftUI")
+            list
+//                .navigationBarTitle("SwiftUI")
             Text("Select a group")
             #elseif os(OSX)
             list.listStyle(SidebarListStyle())

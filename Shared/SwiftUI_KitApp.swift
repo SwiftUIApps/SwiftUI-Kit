@@ -5,13 +5,12 @@
 //  Created by Jordan Singer on 7/10/20.
 //
 
-import UIKit
 import SwiftUI
 
 #if os(iOS)
+import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -87,35 +86,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 }
-
+#endif
 @main
 struct MainApp {
     static func main() {
-        if #available(iOS 14.0, *) {
-            SwiftUI_Kit_iOS_App.main()
+        if #available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *) {
+            SwiftUI_KitApp.main()
         } else {
-            UIApplicationMain(
-                CommandLine.argc,
-                CommandLine.unsafeArgv,
-                nil,
-                NSStringFromClass(AppDelegate.self)
-            )
+            #if os(iOS) // iOS 13.0 or lower
+            UIApplicationMain(CommandLine.argc,
+                              CommandLine.unsafeArgv,
+                              nil,
+                              NSStringFromClass(AppDelegate.self))
+            #else
+            // So we are on macOS 10.15, tvOS 13.0, watchOS 6.0 or someting lower.
+            // By correctly setting the deployment target in your project,
+            // you won't need to do someting here, as this situation will
+            // never occur.
+            print("This app doesn't run (yet) on this OS, so Bye")
+            return
+            #endif
         }
     }
 }
 
-@available(iOS 14.0, *)
-struct SwiftUI_Kit_iOS_App: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
-
-#else
-
-@main
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct SwiftUI_KitApp: App {
     var body: some Scene {
         WindowGroup {
@@ -127,6 +122,4 @@ struct SwiftUI_KitApp: App {
         }
     }
 }
-
-#endif
 
