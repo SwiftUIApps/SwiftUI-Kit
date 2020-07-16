@@ -50,7 +50,6 @@
 		861EC66924B91D4E005C2F44 /* IndicatorsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC66824B91D4E005C2F44 /* IndicatorsGroup.swift */; };
 		861EC66B24B91E1D005C2F44 /* ImagesGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC66A24B91E1D005C2F44 /* ImagesGroup.swift */; };
 		861EC66D24B91F19005C2F44 /* HapticsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC66C24B91F19005C2F44 /* HapticsGroup.swift */; };
-		A8BA8A5D24BE8A0300670061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BA8A5B24BE8A0300670061 /* Main.storyboard */; };
 		A8BA8A5E24BE8A0300670061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8BA8A5C24BE8A0300670061 /* LaunchScreen.storyboard */; };
 		F95A4E1F24B9936000697538 /* SwiftUI_KitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64524B90DD9005C2F44 /* SwiftUI_KitApp.swift */; };
 		F95A4E2024B9937800697538 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64724B90DD9005C2F44 /* ContentView.swift */; };
@@ -134,7 +133,6 @@
 		861EC66824B91D4E005C2F44 /* IndicatorsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsGroup.swift; sourceTree = "<group>"; };
 		861EC66A24B91E1D005C2F44 /* ImagesGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGroup.swift; sourceTree = "<group>"; };
 		861EC66C24B91F19005C2F44 /* HapticsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsGroup.swift; sourceTree = "<group>"; };
-		A8BA8A5B24BE8A0300670061 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A8BA8A5C24BE8A0300670061 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F95A4E0F24B9932000697538 /* SwiftUI Kit Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Kit Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95A4E1A24B9932200697538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				A8BA8A5C24BE8A0300670061 /* LaunchScreen.storyboard */,
-				A8BA8A5B24BE8A0300670061 /* Main.storyboard */,
 				861EC64E24B90DDB005C2F44 /* Info.plist */,
 			);
 			path = iOS;
@@ -445,7 +442,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8BA8A5D24BE8A0300670061 /* Main.storyboard in Resources */,
 				A8BA8A5E24BE8A0300670061 /* LaunchScreen.storyboard in Resources */,
 				861EC64D24B90DDB005C2F44 /* Preview Assets.xcassets in Resources */,
 				861EC64A24B90DDB005C2F44 /* Assets.xcassets in Resources */,
